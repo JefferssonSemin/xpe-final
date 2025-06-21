@@ -8,6 +8,18 @@ services:
     ports:
       - 5341:5341
       - 8089:80
+  
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=apisolid
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
       
   elasticsearch:
     image: bitnami/elasticsearch:8
@@ -37,6 +49,7 @@ services:
 
 volumes:
   esdata:
+  pgdata:
     
 networks:
   elastic-net:
