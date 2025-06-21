@@ -1,33 +1,70 @@
-## .net-example
+## XPE Final Project
 
 ### 📝 Resumo do Projeto
 
-Este é um projeto base construído com **.NET 8**, desenvolvido como um ponto de partida limpo e minimalista para APIs web modernas ou serviços de backend. Ele utiliza os recursos mais recentes, como Minimal APIs, top-level statements, e já vem pré-configurado com Swagger/OpenAPI para documentação. Ideal para desenvolvedores que desejam prototipar rapidamente, escalar ou expandir aplicações **.NET 8** prontas para produção.
+Este é uma API de delivery que permite o cadastro e gerenciamento de entregadores, incluindo a geração de arquivos em diversos formatos como PDF e Excel. A API é construída com .NET 8 e utiliza diversas bibliotecas para facilitar o desenvolvimento e a documentação.
 
 ## Features
 
-- Restfull api with swagger docs
-- Generate files of many types like (pdf, excel) using libs
-- Unit and integration tests
-- CRUD deliveryman
+- API RESTful para gerenciamento de entregadores
+- Documentação da API com Scalar
+- Teste unitário para validação de regras de negócio
+- CRUD Usuários e motoboys
+- Geração de arquivos em PDF e Excel
+- Validação de dados com Fluent Validation
+- Mapeamento de objetos com AutoMapper
+- Docker para containerização
+- Banco de dados Postgres
+- Autenticação JWT
+- Logs com Serilog e seq
 
 ## Techs
 
-
-- .net 8
+- ![badge-dot-net] - .NET 8
 - Auto mapper
 - Fluent validation
-- Swagger
--
-![badge-dot-net]
+- Scalar
+- Serilog
+- Seq
+- Docker
+- Postgres
+- JWT Authentication
+- Unit Tests
+- Docker Compose
+- xUnit
+- Sentry
 
-[badge-dot-net]: https://img.shields.io/badge/8-purple?style=flat&logo=.net
+## Primeiros passos
 
-## Getting started 
-
-1. Clone repository
+1. Clone o repositório
 ```sh
     git clone https://github.com/JefferssonSemin/.net-example.git
 ```
-2. Run docker-compose file
-3. Build .net solution# xpe-final
+2. Rode o aquivo docker-compose 
+```sh
+    docker-compose up -d
+```
+   - Isso irá iniciar os containers necessários, incluindo o banco de dados Postgres e a aplicação .NET.
+
+3. Rode a solução .net xpe-final
+```sh
+    dotnet run --project src/XPE.Final/XPE.Final.csproj
+```
+    - A aplicação estará disponível em `http://localhost:5289`.
+4. Acesse a documentação da API em `http://localhost:{sua porta}/scalar`.
+5. Para testar a API, você pode usar ferramentas como Postman ou diretamente pelo Scalar. A documentação também está em delivery-doc utilizando Bruno.
+
+
+## Diagramas
+
+UML 
+![Uml](delivery-doc/uml.png)
+
+DIagrama de Contexto
+![Contexto](delivery-doc/contexto.png)
+
+Diagrama de Entidade Relacionamento
+![Container](delivery-doc/container.png)
+
+Arquitetura de Software
+![Arquitetura de software](delivery-doc/software.png)
