@@ -1,0 +1,44 @@
+
+services:
+  app-seq:
+    image: datalust/seq:latest
+    container_name: app-seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:5341
+      - 8089:80
+      
+  elasticsearch:
+    image: bitnami/elasticsearch:8
+    container_name: elasticsearch
+    environment:
+      - ELASTICSEARCH_ENABLE_SECURITY=false
+      - ELASTICSEARCH_HEAP_SIZE=1024m
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - esdata:/bitnami/elasticsearch/data
+    networks:
+      - elastic-net
+        
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.13.0
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - elastic-net
+
+volumes:
+  esdata:
+    
+networks:
+  elastic-net:
+    driver: bridge
+

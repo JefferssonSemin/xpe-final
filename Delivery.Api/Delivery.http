@@ -1,0 +1,13 @@
+// Delivery API HTTP requests 
+// Input in delivery_hostaddress your local delivery host address
+
+@Delivery_HostAddress = http://localhost:5289
+
+// Health check
+GET {{Delivery_HostAddress}}/health/
+Accept: application/json
+
+###
+// Get user by ID
+GET {{Delivery_HostAddress}}/User/1
+Accept: application/json
