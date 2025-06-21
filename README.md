@@ -58,13 +58,13 @@ Este é uma API de delivery que permite o cadastro e gerenciamento de entregador
 ## Diagramas
 
 UML 
-![Uml](delivery-doc/uml.png)
+![Uml](https://github.com/JefferssonSemin/xpe-final/blob/main/delivery-doc/UML.png)
 
 DIagrama de Contexto
-![Contexto](delivery-doc/contexto.png)
+![Contexto](https://github.com/JefferssonSemin/xpe-final/blob/main/delivery-doc/Contexto.png)
 
 Diagrama de Entidade Relacionamento
-![Container](delivery-doc/container.png)
+![Container](https://github.com/JefferssonSemin/xpe-final/blob/main/delivery-doc/Container.png)
 
 Arquitetura de Software
-![Arquitetura de software](delivery-doc/software.png)
+![Arquitetura de software](https://github.com/JefferssonSemin/xpe-final/blob/main/delivery-doc/Software.png)
